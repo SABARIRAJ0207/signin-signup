@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .welcome-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .welcome-container h1 {
+            margin: 0;
+            color: blue;
+        }
+        .welcome-container p {
+            color: #555;
+        }
+      .logo {
+          width: 65px; /* Reduce the size of the logo */
+          margin-bottom: 20px;
+      }
+    </style>
+</head>
+<body>
+
+<div class="welcome-container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1 id="welcomeMessage">Welcome!</h1>
+    <p>We're glad to have you here.</p>
+    <a href="index.html" style="font-size: medium;">Logout</a>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    welcomeMessage.textContent = `Welcome, ${name}!`;
+</script>
+
+</body>
+</html>
